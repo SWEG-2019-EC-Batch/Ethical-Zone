@@ -1,0 +1,104 @@
+1 input
+  assignment
+  midterm
+  final
+
+2 output 
+  total
+  pass or fail
+
+3 process(operation)
+declare variables for the inputs and results
+define constants(assignment weight=20%,midterm weight=30%,final weight=50% and pass mark=50
+prompt the user to input the data
+calculate the total as midterm(30%)+assignment(20%)+final(50%)
+check if the total greater than or less than the pass mark
+print the total and pass or fail text
+
+4 design
+4.1 variable declaration
+double assignment,midterm,final
+double total
+string result
+
+4.2 constants
+const double PASS_MARK=50
+const double ASSIGNMENT_WEIGHT=0.20
+const double MIDTERM_WEIGHT=0.30
+const double FINAL_WEIGHT=0.50
+
+4.3 READ THE INPUTS
+cout<<"Enter assignment,midterm and final(each out of 100)";
+cin>>assignment>>midterm>>final;
+
+4.4 calculations
+total=assignment*ASSIGNMENT_WEIGHT + midterm*MIDTERM_WEIGHT + final*FINAL_WEIGHT;
+result=(total >= PASS_MARK)? pass:fail;
+
+4.5 print the results
+cout<<fixed<<setprecision(1) <<endl;
+cout<<"The total is:" <<total<<endl;
+cout<<" The result is:"<<result<< endl;
+
+
+
+
+C++ code
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    // Step 4.1 and 4.2: Declaration of  variables and constants
+    const double ASSIGNMENT_WEIGHT = 0.20;
+    const double MIDTERM_WEIGHT = 0.30;
+    const double FINAL_WEIGHT = 0.50;
+    const double PASS_MARK = 50.0;
+
+    double assignment, midterm, final;
+    double total;
+    string result;
+
+    // Step 4.3: Read the input
+    cout << "Enter assignment, midterm and final marks: ";
+    cin >> assignment >> midterm >> final;
+
+    // Step 4.4: Calculate the course total
+    total = assignment * ASSIGNMENT_WEIGHT
+          + midterm * MIDTERM_WEIGHT
+          + final * FINAL_WEIGHT;
+
+    // Determine Pass or Fail using the conditional operator ?:(not if)
+    result = (total >= PASS_MARK) ? Pass : Fail;
+
+    // Step 4.5: Print the result
+    cout << fixed << setprecision(1);
+    cout << "The total is:" << total << endl;
+    cout << "The result is:" << result << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
