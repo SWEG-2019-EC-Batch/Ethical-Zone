@@ -1,0 +1,102 @@
+1 input
+  distance in km
+  travel time in hours and minutes
+  fuel use in liters per 100km
+  price per liter in birr
+2 output
+  average speed(km/hr)
+  the fuel used(liters)
+  fuel cost
+3 process
+declare variables for the inputs and results
+read the inputs
+calculate the average speed as distance/totalHours
+totalHours=hours+minutes/60.0
+fuelUsed=distance*FuelUsedPer100KM/100
+FuelCost=FuelUsed*PricePerLiter
+print the averageSpeed,fuelUsed,fuelCost
+
+4 design
+4.1 variable declaration
+
+double distance;
+    int hours, minutes;
+    double fuelUse, pricePerLiter;
+    double totalHours;
+    double averageSpeed;
+    double fuelUsed;
+    double fuelCost;
+
+4.2 read the inputs
+    cout << "Enter distance (km),travel time(hours),travel time (minutes),: ";
+    cin >> distance >>  >> minutes>>hours;
+
+    cout << "Enter fuel use (liters per 100 km),price per liter (birr):";
+    cin >> fuelUse >> pricePerLiter;
+
+
+
+
+
+
+C++ code
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    // Step 1: Declaration of  variables
+    double distance;
+    int hours, minutes;
+    double fuelUse, pricePerLiter;
+
+    double totalHours;
+    double averageSpeed;
+    double fuelUsed;
+    double fuelCost;
+
+    // Step 2: read the Inputs
+    cout << "Enter distance (km): ";
+    cin >> distance;
+
+    cout << "Enter travel time (hours): ";
+    cin >> hours;
+
+    cout << "Enter travel time (minutes): ";
+    cin >> minutes;
+
+    cout << "Enter fuel use (liters per 100 km): ";
+    cin >> fuelUse;
+
+    cout << "Enter price per liter (birr): ";
+    cin >> pricePerLiter;
+
+    // Step 3: calculations
+    totalHours = hours + minutes / 60.0;
+
+    averageSpeed = distance / totalHours;
+
+    fuelUsed = (distance * fuelUse) / 100.0;
+
+    fuelCost = fuelUsed * pricePerLiter;
+
+    // Step 4: output
+    cout << fixed << setprecision(2);
+    cout << "Average speed: " << averageSpeed << " km/h" << endl;
+    cout << "Fuel used: " << fuelUsed << " liters" << endl;
+    cout << "Fuel cost: " << fuelCost << " birr" << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
