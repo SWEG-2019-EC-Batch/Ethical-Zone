@@ -64,13 +64,13 @@ int main() {
     double energy charge, service charge, total bill;
 
     // Step 4.3: Read the input
-    cout << "Enter number of units(KWH): ";
+    cout << "Enter number of units:";
     cin >> number of units;
 
     // Step 4.4: Calculate the energy charge
-    energyCharge = (units <= unit_limit)
-                 ? units * first_cost
-                 : unit_limit * fist_cost
+    energyCharge = (number of units <= unit_limit)
+                 ? number of units * first_cost
+                 : unit_limit * first_cost
                    + (number of units - unit_limit) * extra_cost;
 
     total bill = energy charge + service charge;
