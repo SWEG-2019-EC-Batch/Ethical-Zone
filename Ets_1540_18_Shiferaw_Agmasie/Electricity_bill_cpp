@@ -1,0 +1,101 @@
+1 Input
+  Electricity units(KWH)
+
+2 Output
+  Energy charge
+  Service charge
+  the total bill
+
+
+3. Process (operations)
+   Declare variables to the inputs and results
+   Define constants(First 50 units cost = 1.50 birr,Extra units cost = 2.00 birr,
+   First-unit limit = 50,Service charge = 10 birr)
+   read the inputs(number of units)
+   check If units are 50 or less, multiply units by 1.50.
+   Otherwise, charge 1.50 for the first 50 units and 2.00 for the remaining units.
+   Calculate the total bill as  energy charge+ service charge.
+   Print the result for energy charge, service charge, and total bill with two decimal places
+
+4 design
+4.1 variable declaration
+
+double energy charge, total bill;
+int number of units;
+
+4.2 constants
+
+const int unit_limit = 50;
+const double first_cost = 1.50;
+const double extra_cost = 2.00;
+const double service charge = 10.00;
+
+4.3 Reading the input
+cout << "Enter number of units(KWH): ";
+cin >> number of units;
+
+4.4 Calculation
+
+energy Charge = (number of units <= unit_limit) ? number of units * first_cost: unit_limit * first_cost + (number of units - unit_limit) * extra_cost;
+total bill=energy charge + service charge
+
+4.5 Printing the result
+cout << fixed << setprecision(2);
+cout << "Energy charge :" << energy charge << endl;
+cout << "Service charge:" << service charge << endl;
+cout << "Total bill: " << total bill << endl;
+
+
+C++ code
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    // Step 4.1 and 4.2: Declaration of variables and constants
+    const int unit_limit = 50;
+    const double first_cost = 1.50;
+    const double extra_cost = 2.00;
+    const double service charge = 10.00;
+
+    int number of units;
+    double energy charge, service charge, total bill;
+
+    // Step 4.3: Read the input
+    cout << "Enter number of units(KWH): ";
+    cin >> number of units;
+
+    // Step 4.4: Calculate the energy charge
+    energyCharge = (units <= unit_limit)
+                 ? units * first_cost
+                 : unit_limit * fist_cost
+                   + (number of units - unit_limit) * extra_cost;
+
+    total bill = energy charge + service charge;
+
+    // Step 4.5: Print the result
+    cout << fixed << setprecision(2);
+    cout << "energy charge :" << energy charge << endl;
+    cout << "service charge:" << service charge << endl;
+    cout << "total bill:" << total bill << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
