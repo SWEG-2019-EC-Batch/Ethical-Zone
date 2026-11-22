@@ -16,7 +16,7 @@ int main(){
     char Isstud;
     const int WEIGHT_LIMIT = 20;
 
-    // Step 1: Display available routes and ask the passenger to choose.
+    // Step 2: Display available routes and ask the passenger to choose.
     cout << "AVAILABLE TRIP ROUTES: "<< endl;
     cout << "1. Addis Ababa to Adama = 500 ETB"<< endl;
     cout << "2. Addis Ababa to Hawassa = 1500 ETB"<< endl;
@@ -27,7 +27,7 @@ int main(){
     cout << "Choose your route (1-5): " << endl;
     cin >> route;
 
-    // Step 2: Select the base fare using switch.
+    // Step 3: Select the base fare using switch.
 
     switch (route) {
      case 1:
@@ -50,7 +50,7 @@ int main(){
     return 0;
     }
 
-     // Step 3: Get baggage information and calculate extra charge
+     // Step 4: Get baggage information and calculate extra charge
     cout << "Enter bag weight (kg): ";
     cin >> bag_Weight;
 
@@ -62,7 +62,7 @@ int main(){
         extra_charge = (bag_Weight - WEIGHT_LIMIT) * rate;
     } 
 
-     // Step 4: Get passenger information.
+     // Step 5: Get passenger information.
     cout << "Enter your age: ";
     cin >> age;
 
