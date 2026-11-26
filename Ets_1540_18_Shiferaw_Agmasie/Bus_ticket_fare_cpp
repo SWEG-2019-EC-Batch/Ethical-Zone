@@ -1,0 +1,71 @@
+1.INPUT
+   Bag weight in kg
+   Base fare
+   Extra charge per kg
+
+2. OUTPUT
+   Base fare
+   Extra payment for excess weight
+  Charge for the bag
+  Total fare
+
+3. Process
+
+Read the bag weight.
+If bag weight is 20 kg or less:
+Extra payment = 0
+If bag weight is more than 20 kg:
+Excess weight = bagWeight - 20
+Extra payment = excessWeight × ratePerKg
+Calculate:
+totalFare = baseFare + extraPayment
+Display the required information.
+
+
+C++ Code
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    char student;
+    double baseFare, discount, totalFare;
+
+    cout << "Enter age: ";
+    cin >> age;
+
+    cout << "Enter base fare: ";
+    cin >> baseFare;
+
+    cout << "Are you a student? (y/n): ";
+    cin >> student;
+
+    if (age <= 12) {
+        discount = baseFare * 50 / 100;
+    }
+    else if (age >= 60) {
+        discount = baseFare * 25 / 100;
+    }
+    else if (student == 'y' || student == 'Y') {
+        discount = baseFare * 15 / 100;
+    }
+    else {
+        discount = 0;
+    }
+
+    totalFare = baseFare - discount;
+
+    cout << "Base fare = " << baseFare << " birr" << endl;
+    cout << "Discount = " << discount << " birr" << endl;
+    cout << "Total fare = " << totalFare << " birr" << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
