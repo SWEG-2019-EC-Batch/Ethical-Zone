@@ -28,19 +28,65 @@ C++ Code
 using namespace std;
 
 int main() {
-    int age;
+    int route, age;
+    double bagWeight;
+    double baseFare, discount, extraPayment, totalFare;
     char student;
-    double baseFare, discount, totalFare;
 
+    // Input route
+    cout << "Enter route:" << endl;
+    cout << "1. Mekele" << endl;
+    cout << "2. Gondar" << endl;
+    cout << "3. Bahirdar" << endl;
+    cout << "4. Adama" << endl;
+    cout << "5. Hawassa" << endl;
+
+    cout << "Enter your choice: ";
+    cin >> route;
+
+    // Select base fare using switch
+    switch (route) {
+        case 1:
+            baseFare = 500;     // Example fare
+            cout << "Route: Mekele" << endl;
+            break;
+
+        case 2:
+            baseFare = 450;     // Example fare
+            cout << "Route: Gondar" << endl;
+            break;
+
+        case 3:
+            baseFare = 400;     // Example fare
+            cout << "Route: Bahirdar" << endl;
+            break;
+
+        case 4:
+            baseFare = 300;     // Example fare
+            cout << "Route: Adama" << endl;
+            break;
+
+        case 5:
+            baseFare = 350;     // Example fare
+            cout << "Route: Hawassa" << endl;
+            break;
+
+        default:
+            cout << "Invalid route!" << endl;
+            return 0;
+    }
+
+    // Input traveler information
     cout << "Enter age: ";
     cin >> age;
-
-    cout << "Enter base fare: ";
-    cin >> baseFare;
 
     cout << "Are you a student? (y/n): ";
     cin >> student;
 
+    cout << "Enter bag weight in kg: ";
+    cin >> bagWeight;
+
+    // Calculate discount
     if (age <= 12) {
         discount = baseFare * 50 / 100;
     }
@@ -54,15 +100,27 @@ int main() {
         discount = 0;
     }
 
-    totalFare = baseFare - discount;
+    // Calculate extra baggage payment
+    if (bagWeight <= 20) {
+        extraPayment = 0;
+    }
+    else {
+        extraPayment = (bagWeight - 20) * 10;
+    }
 
+    // Calculate total fare
+    totalFare = baseFare - discount + extraPayment;
+
+    // Output
+    cout << "\n----- TRAVEL INFORMATION -----" << endl;
     cout << "Base fare = " << baseFare << " birr" << endl;
     cout << "Discount = " << discount << " birr" << endl;
+    cout << "Extra baggage payment = "
+         << extraPayment << " birr" << endl;
     cout << "Total fare = " << totalFare << " birr" << endl;
 
     return 0;
 }
-
 
 
 
